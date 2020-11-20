@@ -5,104 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>jQuery UI Draggable - Default functionality</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <style>
-        #draggable {
-            width: 200px;
-            height: 200px;
-            background-color: red;
-            color: white;
-            display: table-cell;
-            text-align: center;
-            position: absolute;
-            pointer-events: auto;
-        }
-
-        #containerDiv {
-            position: relative;
-
-        }
-
-        img {
-            position: absolute;
-            right: 0px;
-            top: 0px;
-            z-index: 1000;
-            pointer-events: none;
-        }
-
-        #containerImage{
-            position: relative;
-            background-color: purple;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(function () {
-            $("#draggable").draggable({
-                containment: '#containerDiv',
-                cursor: 'move',
-                opacity: 0.3
-            });
-
-            $("#containerImage").css({'height':($("#emptyPhone").height()+'px')});
-            $("#containerImage").css({'width':($("#emptyPhone").width()+'px')});
-        });
+    <link rel="stylesheet" href="css/styles.css">
 
 
-        function downloadtable() {
-
-            var node = document.getElementById('containerImage');
-
-            domtoimage.toPng(node)
-                .then(function (dataUrl) {
-                    var img = new Image();
-                    img.src = dataUrl;
-                    downloadURI(dataUrl, "records.png")
-                })
-                .catch(function (error) {
-                    console.error('oops, something went wrong!', error);
-                });
-
-        }
-
-
-
-        function downloadURI(uri, name) {
-            var link = document.createElement("a");
-            link.download = name;
-            link.href = uri;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            delete link;
-        }
-
-
-
-
-    </script>
 </head>
 <body>
 
 
-<div id="containerDiv" style="height: 700px; width: 1100px; border: 3px solid black">
-
-    <div id="containerImage">
-        <img src="1583162520_a01%20bos.png" id="emptyPhone" alt="">
-        <div id="draggable" class="ui-widget-content">
-            <p>Drag me around</p>
-        </div>
+<div class="row">
+    <div class="col-md-6">
+        <button id='buyut' class="btn grey darken-3 btn-block m-0 mt-2 p-3 rounded-0 z-depth-0 font-weight-bold">
+            Fotoğrafı Büyüt <i class="fas fa-search-plus pl-2"></i></button>
     </div>
+    <div class="col-md-6">
+        <button id='kucult' class="btn grey darken-3 btn-block m-0 mt-2 p-3 rounded-0 z-depth-0 font-weight-bold">
+            Fotoğrafı Küçült <i class="fas fa-search-minus pl-2"></i></button>
+    </div>
+
+
+    <div class="col-md-6">
+        <button id='cevir' class="btn grey darken-3 btn-block m-0 mt-2 p-3 rounded-0 z-depth-0 font-weight-bold">
+            Fotoğrafı Çevir <i class="fas fa-undo pl-2"></i></button>
+    </div>
+
+    <div class="col-md-6">
+        <button id='sigdir' class="btn grey darken-3 btn-block m-0 mt-2 p-3 rounded-0 z-depth-0 font-weight-bold">
+            Fotoğrafı Sığdır <i class="fas fa-expand pl-2"></i></button>
+    </div>
+
+    <div id="textOperations" style="background-color: green; width: 300px">
+
+        <div class="col-md-6">
+            <button id='textButton'
+                    class="btn grey darken-3 btn-block m-0 mt-2 p-3 rounded-0 z-depth-0 font-weight-bold">
+                Yazı gelsin/gitsin <i class="fas fa-expand pl-2"></i></button>
+            <input id="nameID" name="name" type="text" size="20" autocomplete="off">
+        </div>
+
+        <div class="col-md-6" style="padding: 10px;">
+            <label for="cars">Choose a car:</label>
+
+            <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+
+        </div>
+
+
+    </div>
+
+
+    <!--
+
+            <form method='post' action='fotografyukle.php' enctype='multipart/form-data' id='pform'>
+               <div class="input-group">
+                  <div class="custom-file">
+                  <input type="file" class="custom-file-input" onchange="fotografsec();" id="dosya" name='dosya'
+                   aria-describedby="dosya">
+                   <input type='text' value='2' name='marka' id='marka' hidden>
+                   <input type='text' value='552' name='model' id='model' hidden>
+                   <label class="custom-file-label" for="inputGroupFile01">Fotoğraf yükleyin</label>
+                  </div>
+                </div>
+            </form>
+
+
+   -->
+
+
+    <br/>
+    <input type="file" id="image-source" onchange="previewImage();"/>
+
+
+    <button id="demo" class="downloadtable" onclick="downloadtable()"> Bilgisayara indir</button>
+
+    <button id="" class="downloadtable" onclick="doCapture()"> Sisteme Yükle</button>
+
 
 </div>
 
-<button id="demo" class="downloadtable" onclick="downloadtable()"> Download Image</button>
+
+<div id="containerDiv" style="height: 700px; width: 500px; border: 3px solid black; ">
+
+    <div style="height: 700px; width: 500px;" id="containerImage">
+        <div id="imageText">
+            <p style="cursor: default" id="text">iwebsa.com</p>
+        </div>
+        <img id="image-preview" alt="image preview"/>
+        <img src="1583162520_a01%20bos.png" id="emptyPhone" alt="">
+    </div>
 
 
+</div>
 
 
+<script src="html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js'></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
