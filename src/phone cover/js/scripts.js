@@ -16,11 +16,26 @@ $(function () {
 
 });
 
+function changeTextColor(t) {
+    $('#text').css("color", t.value);
+}
+
+
+$( "#imageText" ).resizable({ alsoResize: "#text" });
+
 $("#fonts").change(function() {
     //alert($(this).val());
     $('#text').css("font-family", $(this).val());
 
 });
+
+$("#textColorSelect").change(function() {
+    //alert($(this).val());
+    $('#text').css("color", $(this).val());
+
+});
+
+
 
 $( "#textButton" ).click(function() {
     $( "#imageText" ).toggle();

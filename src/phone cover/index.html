@@ -55,6 +55,26 @@
         </div>
 
 
+        <div class="col-md-6" style="padding: 10px;">
+            <label for="textColorSelect">Choose a text color:</label>
+
+            <select name="textColorSelect" id="textColorSelect">
+                <option value='black'>Black</option>
+                <option value='red'>Red</option>
+                <option value='blue'>Blue</option>
+                <option value='yellow'>Yellow</option>
+                <option value='orange'>Orange</option>
+            </select>
+
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="favcolor">Choose a text color:</label>
+            <input type="color" id="favcolor" name="favcolor" value="#fff" onchange="changeTextColor(this)" onkeyup="changeTextColor(this)">
+        </div>
+
+
     </div>
 
 
