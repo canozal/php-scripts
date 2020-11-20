@@ -6,16 +6,9 @@
     background-color: red;
     pointer-events: auto;
     z-index: 100;
-    box-sizing: border-box;
 }
 
-#imageText:hover{
-    border: 1px solid black;
-}
 
-#text {
-    display: inline-block;
-}
 
 
 

@@ -21,7 +21,7 @@ function changeTextColor(t) {
 }
 
 
-$( "#imageText" ).resizable({ alsoResize: "#text" });
+
 
 $("#fonts").change(function() {
     //alert($(this).val());
