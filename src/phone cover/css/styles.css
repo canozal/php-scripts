@@ -46,3 +46,7 @@ img {
     position: relative;
     background-color: purple;
 }
+
+#text {
+    font-family: "Courier New", Courier, monospace;
+}

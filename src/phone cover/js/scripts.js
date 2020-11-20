@@ -2,7 +2,7 @@ $(function () {
     $("#image-preview,#imageText").draggable({
 
         cursor: 'move',
-        opacity: 0.3
+        opacity: 0.9
     });
 
     $("#nameID").keyup(function(){
@@ -11,6 +11,14 @@ $(function () {
 
     });
 
+
+
+
+});
+
+$("#fonts").change(function() {
+    //alert($(this).val());
+    $('#text').css("font-family", $(this).val());
 
 });
 
