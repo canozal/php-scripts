@@ -3,7 +3,6 @@
     position: absolute;
     left: 43%;
     top: 47%;
-    background-color: red;
     pointer-events: auto;
     z-index: 100;
 }

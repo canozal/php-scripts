@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
     <title>jQuery UI Draggable - Default functionality</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/styles.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 
 
 </head>
@@ -50,9 +52,19 @@
                 <option value='"Comic Sans MS", cursive, sans-serif'>Comic Sans</option>
                 <option value='Arial, Helvetica, sans-serif'>Arial</option>
                 <option value='"Lucida Sans Unicode", "Lucida Grande", sans-serif'>Lucida Sans Unicode</option>
+                <option value='"Brush Script MT", "Brush Script Std",cursive'>Handwrite</option>
+              
+               
+                 font-family: 'Schoolbell', arial, serif; 
+                Luminari, fantasy
+                
+                Brush Script MT, Brush Script Std, cursive
+                
             </select>
 
         </div>
+
+
 
 
         <div class="col-md-6" style="padding: 10px;">
@@ -69,17 +81,56 @@
         </div>
 
 
+
+
+
+
         <div class="col-md-6">
             <label for="favcolor">Choose a text color:</label>
             <input type="color" id="favcolor" name="favcolor" value="#fff" onchange="changeTextColor(this)" onkeyup="changeTextColor(this)">
         </div>
 
 
-    </div>
 
+    </div>
+    
+    
+    
+    
+    
+    
+       <br/>
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                  
+                                     <div class="row">
+                        
+                                      <button id='yazibuyut' class="btn disabled grey darken-3 btn-block m-0 p-3 rounded-0 z-depth-0 font-weight-bold">Yazı Büyüt <i class="fas fa-plus pl-2"></i></button>
+                             
+                               
+                                      <button id='yazikucult' class="btn disabled grey darken-3 btn-block m-0 p-3 rounded-0 z-depth-0 font-weight-bold">Yazı Küçült <i class="fas fa-minus pl-2"></i></button>
+                               
+                        
+                              
+                              
+                              
+                             
+                                      <button id='sagadondur' class="btn grey darken-3 btn-block m-0 p-3 rounded-0 z-depth-0 font-weight-bold"  >Yazıyı Sağa Döndür <i class="fas fa-redo pl-2"></i></button>
+                          
+                               
+                                      <button id='soladondur' class="btn grey darken-3 btn-block m-0 p-3 rounded-0 z-depth-0 font-weight-bold">Yazıyı Sola Döndür <i class="fas fa-undo pl-2"></i></button>
+                           
+                             
+                                      <button id='dondurmeson' class="btn disabled grey darken-3 btn-block m-0 p-3 rounded-0 z-depth-0 font-weight-bold">Yazıyı Döndürmeyi Sonlandır <i class="fas fa-minus pl-2"></i></button>
+                             
+                                    </div>
+                      
 
     <!--
-
             <form method='post' action='fotografyukle.php' enctype='multipart/form-data' id='pform'>
                <div class="input-group">
                   <div class="custom-file">
@@ -91,8 +142,6 @@
                   </div>
                 </div>
             </form>
-
-
    -->
 
 
@@ -106,6 +155,10 @@
 
 
 </div>
+
+
+
+
 
 
 <div id="containerDiv" style="height: 700px; width: 500px; border: 3px solid black; ">
@@ -128,5 +181,6 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js'></script>
 <script src="js/scripts.js"></script>
+<script src="js/ozelyazi.js"></script>
 </body>
 </html>
